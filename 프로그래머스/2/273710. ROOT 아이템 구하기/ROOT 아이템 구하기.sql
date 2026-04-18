@@ -1,4 +1,5 @@
-select a.ITEM_ID as ITEM_ID, a.ITEM_NAME as ITEM_NAME from 
-ITEM_INFO a join ITEM_TREE b
-on a.ITEM_ID = b.ITEM_ID
-where b.PARENT_ITEM_ID is null;
+select ITEM_ID, ITEM_NAME
+from ITEM_INFO
+where ITEM_ID in
+(select ITEM_ID from ITEM_TREE
+where PARENT_ITEM_ID is null);
