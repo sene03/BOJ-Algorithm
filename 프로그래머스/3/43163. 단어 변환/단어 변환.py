@@ -22,6 +22,7 @@ def solution(begin, target, words):
             return depth
         for i, word in enumerate(words):
             if not visited[i] and can_transform(cur, word):
+                visited[i] = True
                 q.append((word, depth + 1))
     
     return 0
