@@ -5,7 +5,7 @@ with avg_score as (
     group by rest_id
 )
 select R.REST_ID, R.REST_NAME, R.FOOD_TYPE, R.FAVORITES, R.ADDRESS, A.SCORE
-from rest_info R left join avg_score A
+from rest_info R inner join avg_score A
 on R.rest_id = A.rest_id
-where R.address like '서울%' and A.score is not null
+where R.address like '서울%'
 order by A.score desc, R.favorites desc;
