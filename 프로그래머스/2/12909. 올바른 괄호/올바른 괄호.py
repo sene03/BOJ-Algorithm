@@ -1,8 +1,6 @@
 def solution(s):
-    arr = list(s)
-    
     l = 0
-    for a in arr:
+    for a in s:
         if a == '(':
             l += 1
         else:
